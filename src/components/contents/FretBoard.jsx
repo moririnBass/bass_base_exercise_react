@@ -1,15 +1,15 @@
+import { useState } from "react";
 import { SOUND_NOTES, BOWS } from "../../lib/constants";
 
-function FretBoard() {
+function FretBoard({ selectedBowCount = 4, rootSoundNumber }) {
   // 将来的に24フレット以外にも対応できるようにしたい
   const frets = Array.from({ length: 25 }, (_, i) => i);
 
   // 選択したベースの種類に応じて画面描画する弦を変更
-  const activeBows = BOWS.filter((bow) => bow.bow_count <= 6);
+  const activeBows = BOWS.filter((bow) => bow.bow_count <= selectedBowCount);
 
   return (
     <div className="text-black font-mono text-xs m-5 border rounded-sm">
-      {console.log(frets) /* 1行目: フレット番号 */}
       <div className="overflow-x-auto text-nowrap">
         <div className="flex flex-row gap-x-1">
           {frets.map((fret) => (
