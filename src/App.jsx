@@ -5,11 +5,11 @@ import ChordTone from "./components/contents/ChordTone";
 
 function App() {
   return (
-    <>
+    <div className="bg-white">
       <Header />;
       <ChordTone />;
       <Footer />;
-    </>
+    </div>
   );
 }
 
