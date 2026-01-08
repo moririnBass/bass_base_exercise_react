@@ -3,8 +3,17 @@ import FretBoard from "./FretBoard";
 import Controller from "./Controller";
 import { SOUND_NOTES, BOWS, CODE_TONES } from "../../lib/constants";
 
-function ChordTone({ rootSeq, chordSeq, availableBowString }) {
+function ChordTone() {
   const [codeTones, setCodeTones] = useState(CODE_TONES);
+  const [rootSound, setRootSound] = useState();
+  const [bowCount, setBowCount] = useState(4);
+
+  const changeRootSound = (e) => {
+    setRootSound(e.target.value);
+  };
+  const changeBowCount = (e) => {
+    setBowCount(e.target.value);
+  };
 
   // サウンドノードを取得する関数
   // const findSoundNode = (bow, fretCount) => {
@@ -63,8 +72,11 @@ function ChordTone({ rootSeq, chordSeq, availableBowString }) {
 
   return (
     <>
-      <FretBoard />
-      <Controller />
+      <FretBoard selectedBowCount={bowCount} selectedRootSound={rootSound} />
+      <Controller
+        changeRootSound={changeRootSound}
+        changeBowCount={changeBowCount}
+      />
     </>
   );
 }
