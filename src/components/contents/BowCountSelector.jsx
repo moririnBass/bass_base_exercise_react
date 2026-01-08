@@ -16,7 +16,7 @@ function BowCountSelector({ changeBowCount }) {
             onChange={handleBowCount}
           />
           <label
-            for="default-radio-1"
+            htmlFor="default-radio-1"
             className="select-none ms-2 text-sm font-medium text-heading"
           >
             4弦ベース
@@ -32,7 +32,7 @@ function BowCountSelector({ changeBowCount }) {
             onChange={handleBowCount}
           />
           <label
-            for="default-radio-1"
+            htmlFor="default-radio-1"
             className="select-none ms-2 text-sm font-medium text-heading"
           >
             5弦ベース
@@ -48,7 +48,7 @@ function BowCountSelector({ changeBowCount }) {
             onChange={handleBowCount}
           />
           <label
-            for="default-radio-1"
+            htmlFor="default-radio-1"
             className="select-none ms-2 text-sm font-medium text-heading"
           >
             6弦ベース

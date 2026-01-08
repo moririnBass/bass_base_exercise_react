@@ -24,7 +24,7 @@ export const BOWS = [
 ];
 
 export const CODE_TONES = [
-  { seq: 1, interval: "4,7" }, // Major
-  { seq: 2, interval: "3,7" }, // Minor
+  { seq: 1, chordName: "Major", interval: "4,7" }, // Major
+  { seq: 2, chordName: "minor", interval: "3,7" }, // Minor
   // 他のコードトーンを追加可能
 ];
