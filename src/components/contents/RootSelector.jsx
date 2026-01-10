@@ -4,26 +4,23 @@ function RootSelector({ changeRootSound }) {
   const handleRootSound = (e) => changeRootSound(e);
 
   return (
-    <>
-      <label
-        htmlFor="countries"
-        className="block mb-2.5 text-sm font-medium text-heading"
-      >
+    <div className="px-5 pb-5">
+      <label htmlFor="root-note-selector" className="sr-only">
         Root音を選択
       </label>
       <select
-        id="countries"
-        className="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+        id="root-note-selector"
+        className="block px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
         onChange={handleRootSound}
       >
-        <option value="">選択してください</option>
+        <option value="">Root音を選択してください</option>
         {SOUND_NOTES.map((note) => (
           <option key={note.seq} value={note.seq}>
             {note.name}
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 }
 
