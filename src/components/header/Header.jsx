@@ -10,8 +10,9 @@ function Header() {
             className="md:ml-auto h-5 w-5 inline-flex items-center border-0 focus:outline-none justify-center text-base mt-4 md:mt-0"
             href="https://x.com/kusakimoririn"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <img src={xLogo} className="logo react" alt="React logo" />
+            <img src={xLogo} className="logo react" alt="X logo" />
           </a>
         </div>
       </header>
