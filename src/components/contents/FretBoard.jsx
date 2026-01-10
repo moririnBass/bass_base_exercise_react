@@ -1,3 +1,4 @@
+import React from "react";
 import { SOUND_NOTES, BOWS } from "../../lib/constants";
 
 function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
@@ -46,12 +47,12 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
       <div className="overflow-x-auto text-nowrap">
         <div className="flex flex-row gap-x-1 mb-5">
           {frets.map((fret) => (
-            <>
+            <React.Fragment key={fret}>
               <div key={fret} className="w-12 text-center">
                 {convertNotePad(fret.toString())}
               </div>
               <span>|</span>
-            </>
+            </React.Fragment>
           ))}
         </div>
         {activeBows.map((bow, stringIndex) => (
@@ -62,7 +63,7 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
               const note = SOUND_NOTES[noteIndex % SOUND_NOTES.length];
               const isHide = isHidePosition(note.seq);
               return (
-                <>
+                <React.Fragment key={`${stringIndex}-${fretNo}`}>
                   <div
                     key={`${stringIndex}-${fretNo}`}
                     className={`w-12 text-center font-black ${
@@ -71,8 +72,8 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
                   >
                     {isHide ? "".padStart(5, "-") : convertNotePad(note.name)}
                   </div>
-                  |
-                </>
+                  <span>|</span>
+                </React.Fragment>
               );
             })}
           </div>
