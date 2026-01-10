@@ -10,11 +10,24 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
 
   // 選択したルート音とポジションが同じであることをチェック
   const isHidePosition = (noteSeq) => {
-    // ルートの選択を解除したときは全て表示する
-    if (!rootSoundNumber) {
+    // ルート/コードいずれかが未選択のときは全て表示する
+    if (!rootSoundNumber || !quality) {
       return false;
     }
-    return rootSoundNumber != noteSeq;
+
+    // CMajorを選択した時の例は下記
+    // return [1, 5, 8].includes (noteSeq);
+    // Gminorを選択した時の例は下記
+    // return [8, 11, 3].includes (noteSeq);
+    return ![
+      Number(rootSoundNumber),
+      ...quality
+        .split(",")
+        .map(
+          (interval) =>
+            (Number(rootSoundNumber) + Number(interval)) % SOUND_NOTES.length
+        ),
+    ].includes(noteSeq);
   };
 
   return (
