@@ -6,13 +6,13 @@ function ChordQualitySelector({ changeQuality }) {
   return (
     <>
       <label
-        htmlFor="countries"
+        htmlFor="chord-quality"
         className="block mb-2.5 text-sm font-medium text-heading"
       >
         コード名を選択
       </label>
       <select
-        id="countries"
+        id="chord-quality"
         className="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
         onChange={handleQuality}
       >
