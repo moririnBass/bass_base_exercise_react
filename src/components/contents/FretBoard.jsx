@@ -14,19 +14,17 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
     if (rootSoundNumber == null || rootSoundNumber === "" || !quality) {
       return false;
     }
-
+    const root = Number(rootSoundNumber);
+    if (!Number.isFinite(root)) return false;
     // CMajorを選択した時の例は下記
     // return [1, 5, 8].includes (noteSeq);
     // Gminorを選択した時の例は下記
     // return [8, 11, 3].includes (noteSeq);
     return ![
-      Number(rootSoundNumber),
+      root,
       ...quality
         .split(",")
-        .map(
-          (interval) =>
-            (Number(rootSoundNumber) + Number(interval)) % SOUND_NOTES.length
-        ),
+        .map((interval) => (root + Number(interval)) % SOUND_NOTES.length),
     ].includes(noteSeq);
   };
 
@@ -55,10 +53,10 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
             </Fragment>
           ))}
         </div>
-        {activeBows.map((bow, stringIndex) => (
+        {activeBows.map((bow) => (
           <div key={bow.no} className="flex flex-row gap-x-1">
             {frets.map((fretNo) => {
-              // sound_note（ルート音のインデックス）にフレット数を加算
+              // sound_note（開放弦の音のインデックス）にフレット数を加算
               const noteIndex = bow.sound_note + fretNo;
               const note = SOUND_NOTES[noteIndex % SOUND_NOTES.length];
               const isHide = isHidePosition(note.seq);
