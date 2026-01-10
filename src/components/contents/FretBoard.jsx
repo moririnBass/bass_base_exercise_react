@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { SOUND_NOTES, BOWS } from "../../lib/constants";
 
 function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
@@ -10,22 +11,20 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
   // 選択したルート音とポジションが同じであることをチェック
   const isHidePosition = (noteSeq) => {
     // ルート/コードいずれかが未選択のときは全て表示する
-    if (!rootSoundNumber || !quality) {
+    if (rootSoundNumber == null || rootSoundNumber === "" || !quality) {
       return false;
     }
-
+    const root = Number(rootSoundNumber);
+    if (!Number.isFinite(root)) return false;
     // CMajorを選択した時の例は下記
     // return [1, 5, 8].includes (noteSeq);
     // Gminorを選択した時の例は下記
     // return [8, 11, 3].includes (noteSeq);
     return ![
-      Number(rootSoundNumber),
+      root,
       ...quality
         .split(",")
-        .map(
-          (interval) =>
-            (Number(rootSoundNumber) + Number(interval)) % SOUND_NOTES.length
-        ),
+        .map((interval) => (root + Number(interval)) % SOUND_NOTES.length),
     ].includes(noteSeq);
   };
 
@@ -46,33 +45,32 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
       <div className="overflow-x-auto text-nowrap">
         <div className="flex flex-row gap-x-1 mb-5">
           {frets.map((fret) => (
-            <>
-              <div key={fret} className="w-12 text-center">
+            <Fragment key={fret}>
+              <div className="w-12 text-center">
                 {convertNotePad(fret.toString())}
               </div>
-              |
-            </>
+              <span>|</span>
+            </Fragment>
           ))}
         </div>
-        {activeBows.map((bow, stringIndex) => (
+        {activeBows.map((bow) => (
           <div key={bow.no} className="flex flex-row gap-x-1">
             {frets.map((fretNo) => {
-              // sound_noteのnoからSTRING_NOTESのインデックス取得
+              // sound_note（開放弦の音のインデックス）にフレット数を加算
               const noteIndex = bow.sound_note + fretNo;
               const note = SOUND_NOTES[noteIndex % SOUND_NOTES.length];
               const isHide = isHidePosition(note.seq);
               return (
-                <>
+                <Fragment key={`${bow.no}-${fretNo}`}>
                   <div
-                    key={`${stringIndex}-${fretNo}`}
                     className={`w-12 text-center font-black ${
                       isHide ? "bg-gray-700" : ""
                     }`}
                   >
                     {isHide ? "".padStart(5, "-") : convertNotePad(note.name)}
                   </div>
-                  |
-                </>
+                  <span>|</span>
+                </Fragment>
               );
             })}
           </div>

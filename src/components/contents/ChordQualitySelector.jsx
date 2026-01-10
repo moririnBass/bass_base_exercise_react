@@ -10,7 +10,7 @@ function ChordQualitySelector({ changeQuality }) {
       </label>
       <select
         id="chord-quality"
-        className="block px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
+        className="block w-full md:w-auto px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
         onChange={handleQuality}
       >
         <option value="">コード名を選択してください</option>

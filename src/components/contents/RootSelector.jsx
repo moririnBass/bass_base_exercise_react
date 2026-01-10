@@ -1,7 +1,7 @@
 import { SOUND_NOTES } from "../../lib/constants";
 
 function RootSelector({ changeRootSound }) {
-  const handleRootSound = (e) => changeRootSound(e);
+  const handleRootSound = changeRootSound;
 
   return (
     <div className="px-5 pb-5">
@@ -10,7 +10,7 @@ function RootSelector({ changeRootSound }) {
       </label>
       <select
         id="root-note-selector"
-        className="block px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
+        className="block w-full md:w-auto px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
         onChange={handleRootSound}
       >
         <option value="">Root音を選択してください</option>
