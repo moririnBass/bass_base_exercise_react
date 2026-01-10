@@ -10,7 +10,6 @@ function ChordQualitySelector({ changeQuality }) {
       </label>
       <select
         id="chord-quality"
-        aria-label="コード名を選択"
         className="block px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
         onChange={handleQuality}
       >
