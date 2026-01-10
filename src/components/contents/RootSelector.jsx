@@ -9,7 +9,7 @@ function RootSelector({ changeRootSound }) {
         Root音を選択
       </label>
       <select
-        id="select-root-sound"
+        id="root-note-selector"
         aria-label="Root音を選択"
         className="block px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand shadow-xl placeholder:text-body"
         onChange={handleRootSound}
