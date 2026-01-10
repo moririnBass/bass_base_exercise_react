@@ -4,11 +4,11 @@ import ChordQualitySelector from "./ChordQualitySelector";
 
 function Controller({ changeRootSound, changeQuality, changeBowCount }) {
   return (
-    <>
+    <div className="container mx-auto">
       <RootSelector changeRootSound={changeRootSound} />
       <ChordQualitySelector changeQuality={changeQuality} />
       <BowCountSelector changeBowCount={changeBowCount} />
-    </>
+    </div>
   );
 }
 

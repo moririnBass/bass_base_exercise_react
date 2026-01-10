@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SOUND_NOTES, BOWS } from "../../lib/constants";
 
 function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
@@ -31,7 +30,7 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
   };
 
   return (
-    <div className="text-black font-mono text-xs m-5 border rounded-sm">
+    <div className="text-black font-mono m-5 border rounded-sm">
       <div className="overflow-x-auto text-nowrap">
         <div className="flex flex-row gap-x-1">
           {frets.map((fret) => (
@@ -47,7 +46,7 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
           <div key={bow.no} className="flex flex-row gap-x-1">
             {frets.map((fretNo) => {
               // sound_noteのnoからSTRING_NOTESのインデックス取得
-              const noteIndex = bow.sound_note - 1 + fretNo;
+              const noteIndex = bow.sound_note + fretNo;
               const note = SOUND_NOTES[noteIndex % SOUND_NOTES.length];
               const isHide = isHidePosition(note.seq);
               return (
