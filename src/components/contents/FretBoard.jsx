@@ -35,8 +35,10 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
       return note;
     }
 
-    let convertedNote = note.padStart(3, "-");
-    return convertedNote.padEnd(5, "-");
+    const totalPadding = 5 - len;
+    const leftPadding = Math.floor(totalPadding / 2);
+    const rightPadding = totalPadding - leftPadding;
+    return "-".repeat(leftPadding) + note + "-".repeat(rightPadding);
   };
 
   return (
