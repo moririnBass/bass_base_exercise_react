@@ -6,9 +6,9 @@ import ChordTone from "./components/contents/ChordTone";
 function App() {
   return (
     <>
-      <Header />;
-      <ChordTone />;
-      <Footer />;
+      <Header />
+      <ChordTone />
+      <Footer />
     </>
   );
 }
