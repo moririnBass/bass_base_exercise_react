@@ -15,12 +15,12 @@ export const SOUND_NOTES = [
 ];
 
 export const BOWS = [
-  { no: 1, bow_count: 6, sound_note: 1 }, // C string
-  { no: 2, bow_count: 4, sound_note: 8 }, // G string
-  { no: 3, bow_count: 4, sound_note: 3 }, // D string
-  { no: 4, bow_count: 4, sound_note: 10 }, // A string
-  { no: 5, bow_count: 4, sound_note: 5 }, // E string
-  { no: 6, bow_count: 5, sound_note: 12 }, // B string
+  { no: 1, bow_count: 6, sound_note: 0 }, // C string
+  { no: 2, bow_count: 4, sound_note: 7 }, // G string
+  { no: 3, bow_count: 4, sound_note: 2 }, // D string
+  { no: 4, bow_count: 4, sound_note: 9 }, // A string
+  { no: 5, bow_count: 4, sound_note: 4 }, // E string
+  { no: 6, bow_count: 5, sound_note: 11 }, // B string
 ];
 
 export const CODE_TONES = [
