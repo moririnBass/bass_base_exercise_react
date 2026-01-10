@@ -1,0 +1,11 @@
+language: "ja-JP"
+
+reviews:
+  profile: "chill" # 最初はchillが無難（うるさすぎない）
+  high_level_summary: true
+  auto_review:
+    enabled: true
+    drafts: false # Draft PRはレビューしない
+
+chat:
+  auto_reply: true
