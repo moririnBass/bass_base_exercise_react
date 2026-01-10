@@ -29,14 +29,24 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
     ].includes(noteSeq);
   };
 
+  const convertNotePad = (note) => {
+    const len = note.length;
+    if (len === 5) {
+      return note;
+    }
+
+    let convertedNote = note.padStart(3, "-");
+    return convertedNote.padEnd(5, "-");
+  };
+
   return (
     <div className="text-black font-mono m-5 border rounded-sm">
       <div className="overflow-x-auto text-nowrap">
-        <div className="flex flex-row gap-x-1">
+        <div className="flex flex-row gap-x-1 mb-5">
           {frets.map((fret) => (
             <>
               <div key={fret} className="w-12 text-center">
-                {fret.toString().padStart(5, "-")}
+                {convertNotePad(fret.toString())}
               </div>
               |
             </>
@@ -53,11 +63,11 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
                 <>
                   <div
                     key={`${stringIndex}-${fretNo}`}
-                    className={`w-12 text-center ${
+                    className={`w-12 text-center font-black ${
                       isHide ? "bg-gray-700" : ""
                     }`}
                   >
-                    {isHide ? "".padStart(5, "-") : note.name.padStart(5, "-")}
+                    {isHide ? "".padStart(5, "-") : convertNotePad(note.name)}
                   </div>
                   |
                 </>
