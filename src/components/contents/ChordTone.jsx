@@ -15,7 +15,7 @@ function ChordTone() {
     setQuality(e.target.value);
   };
   const changeBowCount = (e) => {
-    setBowCount(e.target.value);
+    setBowCount(Number(e.target.value));
   };
 
   return (

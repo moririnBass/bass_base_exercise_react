@@ -50,14 +50,14 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
               <div key={fret} className="w-12 text-center">
                 {convertNotePad(fret.toString())}
               </div>
-              |
+              <span>|</span>
             </>
           ))}
         </div>
         {activeBows.map((bow, stringIndex) => (
           <div key={bow.no} className="flex flex-row gap-x-1">
             {frets.map((fretNo) => {
-              // sound_noteのnoからSTRING_NOTESのインデックス取得
+              // sound_note（ルート音のインデックス）にフレット数を加算
               const noteIndex = bow.sound_note + fretNo;
               const note = SOUND_NOTES[noteIndex % SOUND_NOTES.length];
               const isHide = isHidePosition(note.seq);
