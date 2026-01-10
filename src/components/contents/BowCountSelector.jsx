@@ -3,7 +3,8 @@ function BowCountSelector({ changeBowCount }) {
 
   return (
     <div className="px-5 pb-5">
-      <div className="border shadow-xl rounded-xl w-50 p-3 flex flex-col gap-4">
+      <fieldset className="border shadow-xl rounded-xl p-3 flex flex-col gap-4">
+        <legend className="text-sm font-medium px-2">ベースの種類</legend>
         <div className="grow items-center">
           <label
             htmlFor="bow-4"
@@ -52,7 +53,7 @@ function BowCountSelector({ changeBowCount }) {
             6弦ベース
           </label>
         </div>
-      </div>
+      </fieldset>
     </div>
   );
 }

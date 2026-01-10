@@ -12,7 +12,7 @@ function Footer() {
           >
             @kusakimoririn
           </a>
-          <span>お問い合わせはお気軽に</span>
+          <span> お問い合わせはお気軽に</span>
         </p>
       </div>
     </footer>
