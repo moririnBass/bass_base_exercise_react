@@ -1,4 +1,4 @@
-import { CODE_TONES } from "../../lib/constants";
+import { CODE_TONES } from "../../../lib/constants";
 
 function ChordQualitySelector({ changeQuality }) {
   const handleQuality = (e) => changeQuality(e);
