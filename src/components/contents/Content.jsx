@@ -46,7 +46,10 @@ function Content() {
   return (
     <>
       {/* コードトーン表示箇所 */}
-      <ChordToneView intervals={intervalArray()} />
+      {/* <div className="text-black font-mono m-5">
+        <ChordToneView intervals={intervalArray()} />
+      </div> */}
+
       <FretBoard
         bowCount={bowCount}
         rootSoundNumber={rootSound}
