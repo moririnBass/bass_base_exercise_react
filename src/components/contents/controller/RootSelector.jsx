@@ -1,4 +1,4 @@
-import { SOUND_NOTES } from "../../lib/constants";
+import { SOUND_NOTES } from "../../../lib/constants";
 
 function RootSelector({ changeRootSound }) {
   const handleRootSound = changeRootSound;

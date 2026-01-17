@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import FretBoard from "./FretBoard";
-import Controller from "./Controller";
-import { SOUND_NOTES, BOWS, CODE_TONES } from "../../lib/constants";
+import Controller from "./controller/Controller";
+import ChordToneView from "./ChordToneView";
 
-function ChordTone() {
+function Content() {
   const [quality, setQuality] = useState();
   const [rootSound, setRootSound] = useState();
   const [bowCount, setBowCount] = useState(4);
@@ -20,6 +20,7 @@ function ChordTone() {
 
   return (
     <>
+      {/* <ChordToneView rootSoundNumber={rootSound} quality={quality} /> */}
       <FretBoard
         bowCount={bowCount}
         rootSoundNumber={rootSound}
@@ -34,4 +35,4 @@ function ChordTone() {
   );
 }
 
-export default ChordTone;
+export default Content;
