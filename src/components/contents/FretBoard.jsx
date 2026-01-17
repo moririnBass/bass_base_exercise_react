@@ -36,10 +36,6 @@ function FretBoard({ bowCount = 4, rootSoundNumber, quality }) {
 
   return (
     <div className="text-black font-mono m-5">
-      {/* コードトーン表示箇所 */}
-      <>
-        <Notes intervals={intervalArray()} />
-      </>
       <div className="border rounded-sm">
         <div className="overflow-x-auto text-nowrap">
           <div className="flex flex-row gap-x-1 mb-5">
