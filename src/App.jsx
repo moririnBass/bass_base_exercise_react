@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import ChordTone from "./components/contents/ChordTone";
+import Content from "./components/contents/Content";
 
 function App() {
   return (
     <div>
       <Header />
-      <ChordTone />
+      <Content />
       <Footer />
     </div>
   );
